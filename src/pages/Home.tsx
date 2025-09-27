@@ -12,7 +12,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="py-16 w-10/12 mx-auto">
+            <section className="py-16 max-w-5xl mx-auto">
                 <h2 className="font-bold text-center mb-4 text-3xl">PRODUCTS</h2>
                 <div className="w-full flex p-4 justify-evenly gap-4">
                     <CardProduct />

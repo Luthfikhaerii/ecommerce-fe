@@ -1,10 +1,11 @@
 import { ShoppingBag, User, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function Header() {
+export default function Header({ toggleCart }: any) {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [cartOpen, setCartOpen] = useState(true);
+    const [cartOpen, setCartOpen] = useState(false);
+    const navigate = useNavigate();
 
     return (
         <header className="w-full px-8 py-4 shadow-sm bg-white fixed z-30">
@@ -31,10 +32,10 @@ export default function Header() {
 
                 {/* Icon Kanan */}
                 <div className="flex items-center gap-6">
-                    <button className="hover:text-gray-600 text-xs">
+                    <button className="hover:text-gray-600 text-xs" onClick={() => { setCartOpen(true); toggleCart(); }}>
                         <ShoppingBag size={20} />
                     </button>
-                    <button className="hover:text-gray-600 text-xs">
+                    <button className="hover:text-gray-600 text-xs" onClick={() => navigate('/order') }>
                         <User size={20} />
                     </button>
 
@@ -67,11 +68,10 @@ export default function Header() {
             </div>
             {
                 cartOpen && (
-                    <div className="absolute top-0 left-0 bg-black/40 w-screen h-screen z-20 flex justify-end overflow-hidden">
-                        <div className="w-96 bg-white">
+                    <div className="absolute top-0 left-0 bg-black/40 w-screen h-screen z-20 flex justify-end" onClick={() => { setCartOpen(false); toggleCart(); }}>
+                        <div className="w-96 bg-white" onClick={(e) => e.stopPropagation()}>
                             <p>Your cart is empty</p>
                         </div>
-
                     </div>
                 )
             }
