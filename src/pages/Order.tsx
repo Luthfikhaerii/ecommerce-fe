@@ -1,22 +1,38 @@
 import { useState } from "react";
+import Login from "../components/layout/Login";
+import Register from "../components/layout/Register";
 
 export default function Order() {
   const [auth, setAuth] = useState(false);
+  const [onLogin, setOnLogin] = useState(false);
+  const [onRegister, setOnRegister] = useState(false);
+
+  const toggleLogin = () => {
+    setOnLogin(value => !value);
+  }
+
+  const toggleRegister = () => {
+    setOnRegister(value => !value);
+  }
 
 
   return (
-    <section className="px-8 max-w-5xl mx-auto min-h-screen mt-4">
+    <>
+
+    { onLogin ? <Login toggleLogin={toggleLogin}/>:''}
+    { onRegister ? <Register toggleRegister={toggleRegister} />:''}
+    <section className="px-8 max-w-6xl mx-auto min-h-screen mt-4">
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-xl font-semibold">Hai upi kaeri</h1>
+        <h1 className="text-xl font-semibold">Hai upi khaeri</h1>
         {
           auth ? <button className="border rounded-lg px-4 py-1 hover:bg-gray-50">
             Pengaturan
           </button> : <div className="flex gap-4">
-            <button className="border rounded-lg bg-gray-200 px-4 py-1 hover:bg-gray-300">
+            <button className="border rounded-lg bg-gray-200 px-4 py-1 hover:bg-gray-300" onClick={toggleLogin}>
               Login
             </button>
-            <button className="border rounded-lg bg-gray-200 px-4 py-1 hover:bg-gray-300">
+            <button className="border rounded-lg bg-gray-200 px-4 py-1 hover:bg-gray-300" onClick={toggleRegister}>
               Register
             </button>
           </div>
@@ -51,7 +67,7 @@ export default function Order() {
           <p className="text-sm">Silakan buat pesanan untuk melihatnya disini.</p>
         </div>
       </div>
-
     </section>
+    </>
   );
 }

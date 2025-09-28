@@ -3,7 +3,7 @@ import CardCategory from "../components/ui/CardCategory";
 export default function Category() {
     return (
         <>
-            <section className="px-8 pt-4 pb-16 max-w-5xl mx-auto">
+            <section className="px-8 pt-4 pb-16 max-w-6xl mx-auto">
                 <h2 className="font-bold text-2xl">CATEGORY
                 </h2>
                 <hr className="my-4"/>

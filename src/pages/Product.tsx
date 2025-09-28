@@ -4,7 +4,7 @@ import { Search } from "lucide-react";
 export default function Catalog() {
     return (
 
-        <section className="px-8 pt-4 pb-16 max-w-5xl mx-auto">
+        <section className="px-8 pt-4 pb-16 max-w-6xl mx-auto">
             <h2 className="font-bold text-2xl">ALL PRODUCTS</h2>
             <hr className="my-4" />
             <div className="my-4 flex justify-between  mx-auto">
