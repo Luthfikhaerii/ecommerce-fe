@@ -41,10 +41,10 @@ export default function Order() {
       </div>
 
       {/* Orders Section */}
-      <div className="bg-white rounded-lg border p-6">
+      <div className="bg-white rounded-lg border px-6 pb-6">
         {/* Tabs */}
-        <div className="flex border-b mb-4">
-          <button className="flex-1 text-center py-2 border-b-2 border-black font-medium">
+        <div className="flex mb-4">
+          <button className="flex-1 text-center py-3 border-b-2 border-black font-medium">
             Pesanan
           </button>
         </div>

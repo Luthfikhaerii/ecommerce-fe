@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 
 export default function ProductDetail() {
     const {id} = useParams<{id:string}>()
+    
+
   return (
     <section className="max-w-screen-lg mx-auto px-6 py-10 grid md:grid-cols-2 gap-12">
         

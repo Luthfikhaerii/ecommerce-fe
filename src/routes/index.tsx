@@ -5,6 +5,7 @@ import Category from "../pages/Category";
 import Product from "../pages/Product";
 import ProductDetail from "../pages/ProductDetail";
 import Order from "../pages/Order";
+import About from "../pages/About";
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "about",
+                element: <About/>
 
             }
         ]
