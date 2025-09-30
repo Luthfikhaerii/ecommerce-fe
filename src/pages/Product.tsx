@@ -1,7 +1,19 @@
+import axios from "axios";
 import CardProduct from "../components/ui/CardProduct";
 import { Search } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+
+const fetchProducts = async ()=>{
+    const data = await axios.get("/api/product")
+    return data.data
+}
 
 export default function Catalog() {
+    // const {data,isLoading} = useQuery({
+    //     queryKey: ["products"],
+    //     queryFn:fetchProducts
+    // })
+    // mutation
     return (
 
         <section className="px-8 pt-4 pb-16 max-w-6xl mx-auto">
