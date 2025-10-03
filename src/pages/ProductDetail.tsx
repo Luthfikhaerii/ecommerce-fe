@@ -1,11 +1,46 @@
 // src/pages/ProductDetail.tsx
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import { Minus, Plus } from "lucide-react";
+// import process from "process";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 export default function ProductDetail() {
     const {id} = useParams<{id:string}>()
+    const exspedisi = ["jnt","jne","sicepat","anteraja","lion","sap","pos","ide"]
     
+    // const {data:provinsi} = useQuery({
+    //   queryKey: ["provinsi"],
+    //   queryFn: async()=>{
+    //     await axios.get(`https://api.binderbyte.com/wilayah/provinsi?api_key=${process.env.VITE_PUBLIC_BINDERBYTE}`)
+    //   }
+    // })
 
+    const {data:kota} = useQuery({
+      queryKey:[`kota:`]
+    })
+
+    // async function handleCekOngkir(){
+    //   try{
+    //     const res = await axios.get("http://api.binderbyte.com/v1/cost",{
+    //       params:{
+    //         api_key:process.env.VITE_PUBLIC_BINDERBYTE,
+    //         origin: "KOTA TANGERANG",
+    //         destination:"KOTA CIREBON",
+    //         courier:"jne",
+    //         weight:"0.5 kg"	
+    //       }
+    //     })
+    //   }catch(err){
+
+    //   }
+    // }
+
+
+    useEffect(()=>{
+
+    },[])
   return (
     <section className="max-w-screen-lg mx-auto px-6 py-10 grid md:grid-cols-2 gap-12">
         
@@ -20,9 +55,9 @@ export default function ProductDetail() {
             <img src="/images/banner.jpg" className="aspect-[4/4] md:w-20 sm:w-28 w-6 "/>
             <img src="/images/banner.jpg" className="aspect-[4/4] md:w-20 sm:w-28 w-6 "/>
             <img src="/images/banner.jpg" className="aspect-[4/4] md:w-20 sm:w-28 w-6 "/>
-             <img src="/images/banner.jpg" className="aspect-[4/4] md:w-20 sm:w-28 w-6 "/>
-              <img src="/images/banner.jpg" className="aspect-[4/4] md:w-20 sm:w-28 w-6 "/>
-               <img src="/images/banner.jpg" className="aspect-[4/4] md:w-20 sm:w-28 w-6 "/>
+            <img src="/images/banner.jpg" className="aspect-[4/4] md:w-20 sm:w-28 w-6 "/>
+            <img src="/images/banner.jpg" className="aspect-[4/4] md:w-20 sm:w-28 w-6 "/>
+            <img src="/images/banner.jpg" className="aspect-[4/4] md:w-20 sm:w-28 w-6 "/>
         </div>
       </div>
 
@@ -97,6 +132,9 @@ export default function ProductDetail() {
             Shipped within 48 hours (upon confirmation of payment)
             <p>{id}</p>
           </p>
+          <select>
+            
+          </select>
         </div>
       </div>
     </section>
