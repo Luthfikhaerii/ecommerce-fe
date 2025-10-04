@@ -8,35 +8,6 @@ import { useParams } from "react-router-dom";
 
 export default function ProductDetail() {
     const {id} = useParams<{id:string}>()
-    const exspedisi = ["jnt","jne","sicepat","anteraja","lion","sap","pos","ide"]
-    
-    // const {data:provinsi} = useQuery({
-    //   queryKey: ["provinsi"],
-    //   queryFn: async()=>{
-    //     await axios.get(`https://api.binderbyte.com/wilayah/provinsi?api_key=${process.env.VITE_PUBLIC_BINDERBYTE}`)
-    //   }
-    // })
-
-    const {data:kota} = useQuery({
-      queryKey:[`kota:`]
-    })
-
-    // async function handleCekOngkir(){
-    //   try{
-    //     const res = await axios.get("http://api.binderbyte.com/v1/cost",{
-    //       params:{
-    //         api_key:process.env.VITE_PUBLIC_BINDERBYTE,
-    //         origin: "KOTA TANGERANG",
-    //         destination:"KOTA CIREBON",
-    //         courier:"jne",
-    //         weight:"0.5 kg"	
-    //       }
-    //     })
-    //   }catch(err){
-
-    //   }
-    // }
-
 
     useEffect(()=>{
 
